@@ -8,7 +8,9 @@ const FavoritesPage = () => {
   return (
     <div className={css.body}>
       <DocumentTitle>Favorites</DocumentTitle>
-      <SectionWrapp>Favorites</SectionWrapp>
+      <SectionWrapp>
+        <div>Favorites</div>
+      </SectionWrapp>
     </div>
   );
 };

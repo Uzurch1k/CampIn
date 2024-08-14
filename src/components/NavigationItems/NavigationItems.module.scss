@@ -1,0 +1,18 @@
+.navItem {
+}
+.navLink {
+	color: var(--cw);
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.2;
+	transition: all 150ms ease-in;
+}
+.navActive {
+	color: var(--cr) !important;
+}
+
+@media screen and (min-width: 768px) {
+	.navLink {
+		font-size: 18px;
+	}
+}

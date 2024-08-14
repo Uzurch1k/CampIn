@@ -1,15 +1,12 @@
 import DocumentTitle from '../../components/DocumentTitle/DocumentTitle';
-import SectionWrapp from '../../components/SectionWrapp/SectionWrapp';
-
-import clsx from 'clsx';
-import css from './HomePage.module.scss';
+import WelcomeSection from '../../components/WelcomeSection/WelcomeSection';
 
 const HomePage = () => {
   return (
-    <div className={css.body}>
-      <DocumentTitle>Home</DocumentTitle>
-      <SectionWrapp>Home</SectionWrapp>
-    </div>
+    <section>
+      <DocumentTitle>CampIn</DocumentTitle>
+      <WelcomeSection />
+    </section>
   );
 };
 

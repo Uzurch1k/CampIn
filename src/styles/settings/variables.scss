@@ -1,26 +1,16 @@
 body {
 	/* Colors */
 	--cw: #fff;
-	--cu: #f0eff4;
-	--cq: #e6e6e6;
-	--ch: #bcbcbc;
-	--cg: #9be1a0;
-	--cn: #87d28d;
-	--cy: #323f47;
-	--cb: #2f2f2f;
-	--cr: #ef5050;
-	--cp: #fddf72;
-	--co: #d5a90b;
+	--ct: #f7f7f7;
+	--cn: #f2f4f7;
+	--cg: #475467;
+	--cb: #101828;
+	--cr: #e44848;
+	--cf: #d84343;
+	--cy: #ffc531;
 
-	--rcp: rgba(47, 47, 47, 0.15);
+	--rcp: rgba(41, 37, 33, 0.65);
 	--rcl: rgba(50, 63, 71, 1);
-	--rck: rgba(50, 63, 71, 0.2);
-	--rcm: rgba(47, 47, 47, 0.2);
-	--rcy: rgba(50, 63, 71, 0.4);
-	--rcn: rgba(50, 63, 71, 0.4);
-	--rcw: rgba(47, 47, 47, 0.4);
-	--rcg: rgba(47, 47, 47, 0.5);
-	--rcb: rgba(47, 47, 47, 0.6);
 
 	/* Colors Dark */
 	--dcu: #f0eff4;
@@ -38,8 +28,7 @@ body {
 	--drco: rgba(47, 47, 47, 0.6);
 
 	/* Fonts */
-	--ff1: "Poppins", sans-serif;
-	--ff2: "Gilroy", sans-serif;
+	--ff1: "Inter", sans-serif;
 }
 
 body.dark {

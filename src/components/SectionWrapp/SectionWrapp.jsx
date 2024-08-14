@@ -1,11 +1,10 @@
-import clsx from 'clsx';
 import css from './SectionWrapp.module.scss';
 
 const SectionWrapp = ({ children }) => {
   return (
-    <div className="container">
-      <div className={css.section}>{children}</div>
-    </div>
+    <section className={css.section}>
+      <div className="container">{children}</div>
+    </section>
   );
 };
 

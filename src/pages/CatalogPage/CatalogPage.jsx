@@ -8,7 +8,9 @@ const CatalogPage = () => {
   return (
     <div className={css.body}>
       <DocumentTitle>Catalog</DocumentTitle>
-      <SectionWrapp>Catalog</SectionWrapp>
+      <SectionWrapp>
+        <div>Catalog</div>
+      </SectionWrapp>
     </div>
   );
 };
