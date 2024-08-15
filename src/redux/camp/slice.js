@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchCamp, deleteCamp } from './operations';
+import { fetchCamp } from './operations';
 import { INITIAL_STATE } from './initialState';
 
 const isPending = action =>
@@ -25,10 +25,15 @@ const campsSlice = createSlice({
     },
     toggleFavorite: (state, action) => {
       const campId = action.payload;
-      if (state.favorites.includes(campId)) {
-        state.favorites = state.favorites.filter(id => id !== campId);
+      const camp = state.items.find(item => item._id === campId);
+      if (!camp) return;
+
+      const index = state.favorites.findIndex(item => item._id === camp._id);
+
+      if (index !== -1) {
+        state.favorites.splice(index, 1);
       } else {
-        state.favorites.push(campId);
+        state.favorites.push(camp);
       }
     },
   },
@@ -36,12 +41,13 @@ const campsSlice = createSlice({
     builder
       .addCase(fetchCamp.fulfilled, (state, action) => {
         state.loading = false;
-        state.items = action.payload;
+        if (state.currentPage === 1) {
+          state.items = action.payload;
+        } else {
+          state.items = [...state.items, ...action.payload];
+        }
       })
-      .addCase(deleteCamp.fulfilled, (state, action) => {
-        state.loading = false;
-        state.items = state.items.filter(camp => camp.id !== action.payload.id);
-      })
+
       .addMatcher(isPending, campsPending)
       .addMatcher(isRejected, campsRejected);
   },

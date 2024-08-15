@@ -17,7 +17,7 @@ const persistConfig = {
   key: 'camp',
   version: 1,
   storage,
-  whitelist: ['favoriteItems'],
+  whitelist: ['favorites'],
 };
 
 const persistedReducer = persistReducer(persistConfig, campsReducer);

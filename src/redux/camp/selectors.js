@@ -1,31 +1,8 @@
-export const selectCamps = state => state.camps.items;
+export const selectCamps = state => state.camp.items;
+export const selectFavorites = state => state.camp.favorites;
 
-export const selectCampsLoading = state => state.camps.loading;
+export const selectItemsPerPage = state => state.camp.itemsPerPage;
+export const selectCurrentPage = state => state.camp.currentPage;
 
-export const selectCampsError = state => state.camps.error;
-
-export const selectCurrentPage = state => state.camps.currentPage;
-
-export const selectItemsPerPage = state => state.camps.itemsPerPage;
-
-export const selectFavorites = state => state.camps.favorites;
-
-// Селектор для відбору оголошень на поточній сторінці
-export const selectPaginatedCamps = state => {
-  const camps = selectCamps(state);
-  const currentPage = selectCurrentPage(state);
-  const itemsPerPage = selectItemsPerPage(state);
-
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-
-  return camps.slice(startIndex, endIndex);
-};
-
-// Селектор для відбору улюблених оголошень
-export const selectFavoriteCamps = state => {
-  const camps = selectCamps(state);
-  const favorites = selectFavorites(state);
-
-  return camps.filter(camp => favorites.includes(camp.id));
-};
+export const selectCampsLoading = state => state.camp.loading;
+export const selectCampsError = state => state.camp.error;

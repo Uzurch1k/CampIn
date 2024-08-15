@@ -11,7 +11,6 @@ const CatalogPage = () => {
     <div className={css.body}>
       <DocumentTitle>Catalog</DocumentTitle>
       <SectionWrapp>
-        <div>Catalog</div>
         <Sidebar />
         <CampList />
       </SectionWrapp>

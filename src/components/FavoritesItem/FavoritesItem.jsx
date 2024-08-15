@@ -6,9 +6,9 @@ import AmenitiesList from '../AmenitiesList/AmenitiesList';
 import FavoritesBtn from '../FavoritesBtn/FavoritesBtn';
 import ReviewsLocal from '../ReviewsLocal/ReviewsLocal';
 
-import css from './CampItem.module.scss';
+import css from './FavoritesItem.module.scss';
 
-const CampItem = ({ campItems }) => {
+const FavoritesItem = ({ campItems }) => {
   const dispatch = useDispatch();
 
   const { _id, description } = campItems;
@@ -28,4 +28,4 @@ const CampItem = ({ campItems }) => {
   );
 };
 
-export default CampItem;
+export default FavoritesItem;
