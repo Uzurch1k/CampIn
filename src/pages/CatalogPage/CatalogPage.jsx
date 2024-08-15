@@ -1,5 +1,7 @@
 import DocumentTitle from '../../components/DocumentTitle/DocumentTitle';
 import SectionWrapp from '../../components/SectionWrapp/SectionWrapp';
+import Sidebar from '../../components/Sidebar/Sidebar';
+import CampList from '../../components/CampList/CampList';
 
 import clsx from 'clsx';
 import css from './CatalogPage.module.scss';
@@ -10,6 +12,8 @@ const CatalogPage = () => {
       <DocumentTitle>Catalog</DocumentTitle>
       <SectionWrapp>
         <div>Catalog</div>
+        <Sidebar />
+        <CampList />
       </SectionWrapp>
     </div>
   );

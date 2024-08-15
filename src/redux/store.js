@@ -1,50 +1,37 @@
-// import { configureStore } from '@reduxjs/toolkit';
-// import storage from 'redux-persist/lib/storage';
-// import {
-//   persistReducer,
-//   persistStore,
-//   FLUSH,
-//   REHYDRATE,
-//   PAUSE,
-//   PERSIST,
-//   PURGE,
-//   REGISTER,
-// } from 'redux-persist';
+import { configureStore } from '@reduxjs/toolkit';
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
-// import { setupInterceptors } from './auth/operations';
-// import { authReducer } from './auth/slice';
-// import { waterReducer } from './water/slice';
+import { campsReducer } from '../redux/camp/slice';
 
-// const authPersistConfig = {
-//   key: 'auth',
-//   version: 1,
-//   storage,
-//   whitelist: ['token', 'refreshToken'],
-// };
+const persistConfig = {
+  key: 'camp',
+  version: 1,
+  storage,
+  whitelist: ['favoriteItems'],
+};
 
-// const persistedAuthReducer = persistReducer(authPersistConfig, authReducer);
+const persistedReducer = persistReducer(persistConfig, campsReducer);
 
-// export const store = configureStore({
-//   reducer: {
-//     auth: persistedAuthReducer,
-//     water: waterReducer,
-//   },
-//   middleware: getDefaultMiddleware =>
-//     getDefaultMiddleware({
-//       serializableCheck: {
-//         ignoredActions: [
-//           FLUSH,
-//           REHYDRATE,
-//           PAUSE,
-//           PERSIST,
-//           PURGE,
-//           REGISTER,
-//           'water/setMonth',
-//         ],
-//       },
-//     }),
-// });
+export const store = configureStore({
+  reducer: {
+    camp: persistedReducer,
+  },
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+});
 
-// setupInterceptors(store);
-
-// export const persistor = persistStore(store);
+export const persistor = persistStore(store);

@@ -54,34 +54,15 @@
 	display: none;
 }
 .listMob {
-	overflow-y: scroll;
-	flex-shrink: 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	height: 100%;
 	gap: 55px;
-	position: absolute;
-	z-index: 9;
-	top: 0;
-	left: 0;
-	padding: 50px 0;
-	height: 100vh;
-	width: 100%;
-	backdrop-filter: blur(9.5px);
-	transform: translateY(calc(-100% + 50px));
-	transition: all 300ms ease-in;
-
-	opacity: 0;
-	visibility: hidden;
-	&.isOpened {
-		opacity: 1;
-		visibility: visible;
-		transform: translateY(0);
-	}
 }
 
-.burgerMenu {
+.burgerBtn {
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -121,7 +102,35 @@
 		}
 	}
 }
+.burgerBox {
+	display: grid;
+	grid-template-columns: 1fr;
+	justify-content: center;
+	align-items: center;
+	overflow-y: scroll;
+	position: absolute;
+	z-index: 9;
+	top: 0;
+	left: 0;
+	padding: 120px 0 60px 0;
+	height: 100vh;
+	width: 100%;
+	backdrop-filter: blur(9.5px);
+	transform: translateY(-100%);
+	transition: all 300ms ease-in;
 
+	opacity: 0;
+	visibility: hidden;
+	&.isOpened {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+}
+
+.bgHeader {
+	backdrop-filter: blur(9.5px);
+}
 .otherPage {
 	background-color: var(--cw);
 	border-bottom: 1px solid var(--cb);
@@ -129,7 +138,7 @@
 	.logo__name {
 		color: var(--cb);
 	}
-	.burgerMenu {
+	.burgerBtn {
 		span {
 			background-color: var(--cb);
 		}
@@ -159,7 +168,7 @@
 		display: none;
 	}
 
-	.burgerMenu {
+	.burgerBtn {
 		display: none;
 	}
 }

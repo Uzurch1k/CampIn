@@ -13,12 +13,11 @@ const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const headerClass = clsx(css.nav, {
-    [css.otherPage]:
-      location.pathname === '/catalog' || location.pathname === '/favorites',
+    [css.otherPage]: location.pathname !== '/',
+    [css.bgHeader]: menuOpen,
   });
   const navItemClass = clsx({
-    [css.itemLink]:
-      location.pathname === '/catalog' || location.pathname === '/favorites',
+    [css.itemLink]: location.pathname !== '/',
   });
 
   const toggleMenu = () => {
@@ -60,7 +59,7 @@ const Navigation = () => {
               </ul>
 
               <button
-                className={clsx(css.burgerMenu, menuOpen && css.isOpened)}
+                className={clsx(css.burgerBtn, menuOpen && css.isOpened)}
                 onClick={toggleMenu}
               >
                 <span></span>
@@ -72,12 +71,14 @@ const Navigation = () => {
         </div>
       </header>
 
-      <ul className={clsx(css.listMob, menuOpen && css.isOpened)}>
-        <NavigationItems
-          csslink={navItemClass}
-          onItemClick={handleNavItemClick}
-        />
-      </ul>
+      <div className={clsx(css.burgerBox, menuOpen && css.isOpened)}>
+        <ul className={css.listMob}>
+          <NavigationItems
+            csslink={navItemClass}
+            onItemClick={handleNavItemClick}
+          />
+        </ul>
+      </div>
     </>
   );
 };
