@@ -1,3 +1,22 @@
+.btnWrapp {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+.btn {
+	font-weight: 500;
+	line-height: 1.5;
+	letter-spacing: -0.005rem;
+	padding: 16px 32px;
+	border-radius: 200px;
+	border: 1px solid var(--rcu);
+	transition: all 150ms ease-in;
+	&:hover,
+	&:focus {
+		border: 1px solid var(--cr);
+	}
+}
+
 @media screen and (min-width: 768px) {
 }
 

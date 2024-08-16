@@ -5,10 +5,12 @@
 	svg {
 		fill: var(--cw);
 		stroke: var(--cb);
+		transition: all 150ms ease-in;
 	}
 }
 .selected {
 	svg {
 		fill: var(--cr);
+		stroke: var(--cr);
 	}
 }

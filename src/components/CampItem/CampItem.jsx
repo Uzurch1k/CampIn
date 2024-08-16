@@ -13,7 +13,7 @@ const CampItem = ({ campItems }) => {
     <li className={css.item}>
       <div className={css.item__body}>
         <div className={css.item__imgWrapp}>
-          {/* <img src={gallery[0]} alt="Camp" /> */}
+          <img src={gallery[0]} alt="Camp" />
         </div>
         <div className={css.item__content}>
           <div className={css.item__info}>

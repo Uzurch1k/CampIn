@@ -42,7 +42,13 @@ const CatalogPage = () => {
       <SectionWrapp>
         <Sidebar />
         <CampList camps={camps} />
-        <button onClick={handleLoadMore}>Load more</button>
+        {currentPage !== itemsPerPage && (
+          <div className={css.btnWrapp}>
+            <button className={css.btn} onClick={handleLoadMore}>
+              Load more
+            </button>
+          </div>
+        )}
       </SectionWrapp>
     </div>
   );

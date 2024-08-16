@@ -10,15 +10,10 @@ import clsx from 'clsx';
 import css from './FavoritesBtn.module.scss';
 
 const FavoritesBtn = ({ idItem }) => {
-  const [selected, setSelected] = useState(false);
   const favorites = useSelector(selectFavorites);
   const dispatch = useDispatch();
 
-  // favorites.forEach(favorit => {
-  //   if (favorit._id === idItem) {
-  //     setSelected(true);
-  //   }
-  // });
+  const isFavorite = favorites.some(favorit => favorit._id === idItem);
 
   const handleToggleFavorite = campId => {
     dispatch(toggleFavorite(campId));
@@ -26,7 +21,7 @@ const FavoritesBtn = ({ idItem }) => {
 
   return (
     <button
-      className={clsx(css.btn, selected && css.selected)}
+      className={clsx(css.btn, isFavorite && css.selected)}
       onClick={() => handleToggleFavorite(idItem)}
     >
       <svg width="24" height="24">
