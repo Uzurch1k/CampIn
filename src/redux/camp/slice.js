@@ -41,10 +41,15 @@ const campsSlice = createSlice({
     builder
       .addCase(fetchCamp.fulfilled, (state, action) => {
         state.loading = false;
+        const newItems = action.payload.filter(
+          newItem =>
+            !state.items.some(existingItem => existingItem._id === newItem._id)
+        );
+
         if (state.currentPage === 1) {
           state.items = action.payload;
         } else {
-          state.items = [...state.items, ...action.payload];
+          state.items = [...state.items, ...newItems];
         }
       })
 

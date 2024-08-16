@@ -1,0 +1,14 @@
+.btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	svg {
+		fill: var(--cw);
+		stroke: var(--cb);
+	}
+}
+.selected {
+	svg {
+		fill: var(--cr);
+	}
+}

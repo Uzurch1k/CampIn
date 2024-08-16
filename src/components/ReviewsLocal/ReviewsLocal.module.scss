@@ -1,0 +1,36 @@
+.body {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+.part {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+.iconStar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	fill: var(--cy);
+}
+.iconLocal {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	stroke: var(--cb);
+	fill: var(--cw);
+}
+.rating {
+	text-decoration-line: underline;
+	line-height: 1.5;
+}
+.local {
+	line-height: 1.5;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1440px) {
+}
