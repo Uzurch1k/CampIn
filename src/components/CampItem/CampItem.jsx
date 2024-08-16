@@ -6,8 +6,18 @@ import clsx from 'clsx';
 import css from './CampItem.module.scss';
 
 const CampItem = ({ campItems }) => {
-  const { _id, gallery, name, price, rating, location, reviews, description } =
-    campItems;
+  const {
+    _id,
+    gallery,
+    details,
+    adults,
+    name,
+    price,
+    rating,
+    location,
+    reviews,
+    description,
+  } = campItems;
 
   return (
     <li className={css.item}>
@@ -31,7 +41,7 @@ const CampItem = ({ campItems }) => {
             />
           </div>
           <p className={css.item__desc}>{description}</p>
-          <AmenitiesList />
+          <AmenitiesList details={details} adults={adults} />
           <button className={clsx(css.item__btn, 'btn-def')} type="button">
             Show more
           </button>

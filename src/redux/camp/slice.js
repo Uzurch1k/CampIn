@@ -25,15 +25,16 @@ const campsSlice = createSlice({
     },
     toggleFavorite: (state, action) => {
       const campId = action.payload;
-      const camp = state.items.find(item => item._id === campId);
-      if (!camp) return;
 
-      const index = state.favorites.findIndex(item => item._id === camp._id);
+      const index = state.favorites.findIndex(item => item._id === campId);
 
       if (index !== -1) {
         state.favorites.splice(index, 1);
       } else {
-        state.favorites.push(camp);
+        const camp = state.items.find(item => item._id === campId);
+        if (camp) {
+          state.favorites.push(camp);
+        }
       }
     },
   },
@@ -46,11 +47,7 @@ const campsSlice = createSlice({
             !state.items.some(existingItem => existingItem._id === newItem._id)
         );
 
-        if (state.currentPage === 1) {
-          state.items = action.payload;
-        } else {
-          state.items = [...state.items, ...newItems];
-        }
+        state.items = [...state.items, ...newItems];
       })
 
       .addMatcher(isPending, campsPending)

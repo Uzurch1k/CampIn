@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { setPage } from '../../redux/camp/slice';
@@ -16,7 +17,6 @@ import CampList from '../../components/CampList/CampList';
 
 import clsx from 'clsx';
 import css from './CatalogPage.module.scss';
-import { useEffect } from 'react';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -40,11 +40,11 @@ const CatalogPage = () => {
     <div className={css.body}>
       <DocumentTitle>Catalog</DocumentTitle>
       <SectionWrapp>
-        <Sidebar />
+        {/* <Sidebar /> */}
         <CampList camps={camps} />
         {currentPage !== itemsPerPage && (
           <div className={css.btnWrapp}>
-            <button className={css.btn} onClick={handleLoadMore}>
+            <button className={css.btn} type="button" onClick={handleLoadMore}>
               Load more
             </button>
           </div>

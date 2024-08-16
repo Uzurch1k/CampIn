@@ -1,15 +1,21 @@
-import { ThreeDots } from 'react-loader-spinner';
+import { MutatingDots, ThreeDots } from 'react-loader-spinner';
 
 import css from './Loader.module.scss';
 import clsx from 'clsx';
 
 export const LoaderMain = () => {
   return (
-    <div className={css.main}>
-      <div className={css.box}>
-        <p className={css.title}>AquaTrack</p>
-      </div>
-    </div>
+    <MutatingDots
+      visible={true}
+      height="100"
+      width="100"
+      color="#E44848"
+      secondaryColor="#101828"
+      radius="12.5"
+      ariaLabel="mutating-dots-loading"
+      wrapperStyle={{}}
+      wrapperClass={css.main}
+    />
   );
 };
 
