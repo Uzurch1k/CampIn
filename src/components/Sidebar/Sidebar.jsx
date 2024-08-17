@@ -1,6 +1,6 @@
 import SearchLocation from '../SearchLocation/SearchLocation';
-import TypeList from '../TypeList/TypeList';
-import EquipmentList from '../EquipmentList/EquipmentList';
+import TypeList from '../VehicleType/VehicleType';
+import EquipmentList from '../VehicleEquipment/VehicleEquipment';
 
 import css from './Sidebar.module.scss';
 

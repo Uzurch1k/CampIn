@@ -14,6 +14,7 @@ import DocumentTitle from '../../components/DocumentTitle/DocumentTitle';
 import SectionWrapp from '../../components/SectionWrapp/SectionWrapp';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import CampList from '../../components/CampList/CampList';
+import { LoaderMain } from '../../components/Loader/Loader';
 
 import clsx from 'clsx';
 import css from './CatalogPage.module.scss';
@@ -34,14 +35,12 @@ const CatalogPage = () => {
     dispatch(setPage(currentPage + 1));
   };
 
-  if (loading) return <p>loading...</p>;
-
   return (
     <div className={css.body}>
       <DocumentTitle>Catalog</DocumentTitle>
       <SectionWrapp>
         {/* <Sidebar /> */}
-        <CampList camps={camps} />
+        {!loading ? <CampList camps={camps} /> : <LoaderMain />}
         {currentPage !== itemsPerPage && (
           <div className={css.btnWrapp}>
             <button className={css.btn} type="button" onClick={handleLoadMore}>

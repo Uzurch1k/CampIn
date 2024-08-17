@@ -14,25 +14,22 @@ export const LoaderMain = () => {
       radius="12.5"
       ariaLabel="mutating-dots-loading"
       wrapperStyle={{}}
-      wrapperClass={css.main}
+      wrapperClass={css.mainLoder}
     />
   );
 };
 
-export const LoaderDetails = isPositioning => {
+export const LoaderImg = () => {
   return (
     <ThreeDots
       visible={true}
-      height="50"
-      width="50"
-      color={isPositioning ? 'white' : '#87d28d'}
+      height="80"
+      width="80"
+      color="#E44848"
       radius="9"
       ariaLabel="three-dots-loading"
-      wrapperStyle={{ color: 'yellow' }}
-      wrapperClass={clsx({
-        [css.details]: true,
-        [css.loaderPositioning]: isPositioning,
-      })}
+      wrapperStyle={{}}
+      wrapperClass={css.imgLoader}
     />
   );
 };

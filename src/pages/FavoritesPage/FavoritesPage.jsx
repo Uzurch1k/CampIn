@@ -8,6 +8,7 @@ import {
 import DocumentTitle from '../../components/DocumentTitle/DocumentTitle';
 import SectionWrapp from '../../components/SectionWrapp/SectionWrapp';
 import CampList from '../../components/CampList/CampList';
+import { LoaderMain } from '../../components/Loader/Loader';
 
 import clsx from 'clsx';
 import css from './FavoritesPage.module.scss';
@@ -17,13 +18,11 @@ const FavoritesPage = () => {
   const loading = useSelector(selectCampsLoading);
   console.log(camps);
 
-  if (loading) return <p>loading...</p>;
-
   return (
     <div className={css.body}>
       <DocumentTitle>Favorites</DocumentTitle>
       <SectionWrapp>
-        <CampList camps={camps} />
+        {!loading ? <CampList camps={camps} /> : <LoaderMain />}
       </SectionWrapp>
     </div>
   );

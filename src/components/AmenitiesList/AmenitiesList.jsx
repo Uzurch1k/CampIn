@@ -1,4 +1,5 @@
 import icons from '../../img/icons/icons.svg';
+
 import css from './AmenitiesList.module.scss';
 
 const AmenitiesList = ({ details, adults }) => {
