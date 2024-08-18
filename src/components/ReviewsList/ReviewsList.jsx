@@ -2,12 +2,15 @@ import ReviewsItem from '../ReviewsItem/ReviewsItem';
 
 import css from './ReviewsList.module.scss';
 
-const ReviewsList = () => {
+const ReviewsList = ({ campItem }) => {
+  const { reviews } = campItem;
+
   return (
-    <div className={css.body}>
-      ReviewsList
-      <ReviewsItem />
-    </div>
+    <ul className={css.reviews}>
+      {reviews.map((revie, index) => (
+        <ReviewsItem key={index} revie={revie} />
+      ))}
+    </ul>
   );
 };
 

@@ -1,0 +1,43 @@
+.details {
+	&__title {
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 1.2;
+		margin-bottom: 15px;
+	}
+	&__list {
+		padding-top: 15px;
+		border-top: 1px solid var(--rcy);
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		span {
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 1.33;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.details {
+		&__title {
+			font-size: 20px;
+			margin-bottom: 24px;
+		}
+		&__list {
+			padding-top: 24px;
+			gap: 14px;
+		}
+		&__item {
+			span {
+				font-size: 18px;
+			}
+		}
+	}
+}

@@ -3,10 +3,10 @@ import ReviewsList from '../ReviewsList/ReviewsList';
 
 import css from './ModalReviews.module.scss';
 
-const ModalReviews = () => {
+const ModalReviews = ({ campItem }) => {
   return (
     <div className={css.reviews}>
-      <ReviewsList />
+      <ReviewsList campItem={campItem} />
       <FormCampBook />
     </div>
   );

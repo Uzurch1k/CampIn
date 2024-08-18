@@ -67,6 +67,7 @@ const Modal = ({ campItem, onClose }) => {
             <use href={`${icons}#icon-close`}></use>
           </svg>
         </button>
+
         <ModalInfo campItem={campItem} />
 
         <div className={css.modal__wrapp}>
@@ -76,7 +77,7 @@ const Modal = ({ campItem, onClose }) => {
             <li>
               <button
                 className={clsx(
-                  css.modal__link,
+                  css.modal__btn,
                   activeTab === 'features' && css.linkActive
                 )}
                 onClick={() => handleTabClick('features')}
@@ -87,7 +88,7 @@ const Modal = ({ campItem, onClose }) => {
             <li>
               <button
                 className={clsx(
-                  css.modal__link,
+                  css.modal__btn,
                   activeTab === 'reviews' && css.linkActive
                 )}
                 onClick={() => handleTabClick('reviews')}

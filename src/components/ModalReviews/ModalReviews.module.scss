@@ -1,0 +1,14 @@
+.reviews {
+	padding-top: 24px;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 15px;
+}
+
+@media screen and (min-width: 768px) {
+	.reviews {
+		padding-top: 44px;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 24px;
+	}
+}

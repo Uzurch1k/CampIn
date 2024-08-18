@@ -12,7 +12,9 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	fill: var(--cy);
+	svg {
+		fill: var(--cy);
+	}
 }
 .iconLocal {
 	display: flex;

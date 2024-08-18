@@ -1,0 +1,74 @@
+.revie {
+	&__box {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		margin-bottom: 10px;
+	}
+	&__ava {
+		width: 40px;
+		height: 40px;
+		background-color: var(--cn);
+		flex-shrink: 0;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		span {
+			color: var(--cr);
+			font-size: 20px;
+			font-weight: 600;
+			line-height: 1.25;
+		}
+	}
+	&__info {
+	}
+	&__name {
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 1.33;
+		margin-bottom: 4px;
+	}
+	&__rating {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+	}
+	&__star {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		svg {
+			fill: var(--cn);
+			&.yellowStar {
+				fill: var(--cy);
+			}
+		}
+	}
+	&__comment {
+		color: var(--cg);
+		line-height: 1.5;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.revie {
+		&__box {
+			gap: 16px;
+			margin-bottom: 16px;
+		}
+		&__ava {
+			width: 60px;
+			height: 60px;
+			span {
+				font-size: 24px;
+			}
+		}
+		&__name {
+			font-size: 18px;
+		}
+		&__rating {
+			gap: 4px;
+		}
+	}
+}
