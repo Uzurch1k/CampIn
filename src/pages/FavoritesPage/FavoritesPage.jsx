@@ -10,13 +10,11 @@ import SectionWrapp from '../../components/SectionWrapp/SectionWrapp';
 import CampList from '../../components/CampList/CampList';
 import { LoaderMain } from '../../components/Loader/Loader';
 
-import clsx from 'clsx';
 import css from './FavoritesPage.module.scss';
 
 const FavoritesPage = () => {
   const camps = useSelector(selectFavorites);
   const loading = useSelector(selectCampsLoading);
-  console.log(camps);
 
   return (
     <div className={css.body}>

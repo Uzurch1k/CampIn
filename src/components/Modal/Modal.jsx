@@ -52,7 +52,6 @@ const Modal = ({ campItem, onClose }) => {
   };
 
   if (!campItem) return null;
-  console.log(campItem);
 
   const { description, gallery } = campItem;
 

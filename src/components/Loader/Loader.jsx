@@ -1,7 +1,6 @@
 import { MutatingDots, ThreeDots } from 'react-loader-spinner';
 
 import css from './Loader.module.scss';
-import clsx from 'clsx';
 
 export const LoaderMain = () => {
   return (
