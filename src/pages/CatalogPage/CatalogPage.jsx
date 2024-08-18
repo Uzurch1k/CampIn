@@ -12,7 +12,6 @@ import { fetchCamp } from '../../redux/camp/operations';
 
 import DocumentTitle from '../../components/DocumentTitle/DocumentTitle';
 import SectionWrapp from '../../components/SectionWrapp/SectionWrapp';
-// import Sidebar from '../../components/Sidebar/Sidebar';
 import CampList from '../../components/CampList/CampList';
 import { LoaderMain } from '../../components/Loader/Loader';
 
@@ -34,10 +33,9 @@ const CatalogPage = () => {
   };
 
   return (
-    <div className={css.body}>
+    <div className={css.catalogPage}>
       <DocumentTitle>Catalog</DocumentTitle>
       <SectionWrapp>
-        {/* <Sidebar /> */}
         {!loading ? <CampList camps={camps} /> : <LoaderMain />}
         {currentPage !== itemsPerPage && (
           <div className={css.btnWrapp}>

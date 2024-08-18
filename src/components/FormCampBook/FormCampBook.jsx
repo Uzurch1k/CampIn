@@ -1,12 +1,20 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
+
+import icons from '../../img/icons/icons.svg';
 
 import clsx from 'clsx';
 import css from './FormCampBook.module.scss';
 
 const FormCampBook = () => {
+  const [errors, setErrors] = useState({
+    name: false,
+    email: false,
+    date: false,
+  });
+
   useEffect(() => {
     flatpickr('#booking-date', {
       altInput: true,
@@ -14,7 +22,6 @@ const FormCampBook = () => {
       dateFormat: 'd.m.Y',
       showMonths: 1,
       minDate: 'today',
-      shorthandCurrentMonth: true,
       disableMobile: true,
       locale: {
         firstDayOfWeek: 0,
@@ -47,35 +54,79 @@ const FormCampBook = () => {
     document.head.appendChild(style);
   }, []);
 
+  const handleSubmit = event => {
+    event.preventDefault();
+
+    const form = event.target;
+    const name = form['form-name'].value.trim();
+    const email = form['form-email'].value.trim();
+    const date = form['form-date'].value.trim();
+
+    let valid = true;
+    const newErrors = { name: false, email: false, date: false };
+
+    if (!name) {
+      newErrors.name = true;
+      valid = false;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailPattern.test(email)) {
+      newErrors.email = true;
+      valid = false;
+    }
+
+    if (!date) {
+      newErrors.date = true;
+      valid = false;
+    }
+
+    setErrors(newErrors);
+
+    if (valid) {
+      form.submit();
+    }
+  };
+
   return (
-    <form className={css.form}>
+    <form className={css.form} onSubmit={handleSubmit}>
       <h2 className={css.form__title}>Book your campervan now</h2>
       <p className={css.form__text}>
         Stay connected! We are always ready to help you.
       </p>
 
       <div className={css.form__wrapp}>
-        <label className={css.form__label}>
-          <input type="text" name="form-name" id="" placeholder="Name" />
+        <label className={clsx(css.form__label, errors.name && css.error)}>
+          <input type="text" name="form-name" placeholder="Name" />
         </label>
 
-        <label className={css.form__label}>
-          <input type="email" name="form-email" id="" placeholder="Email" />
+        <label className={clsx(css.form__label, errors.email && css.error)}>
+          <input type="text" name="form-email" placeholder="Email" />
         </label>
 
-        <label className={css.form__label}>
+        <label
+          className={clsx(
+            css.form__label,
+            css.bookingDate,
+            errors.date && css.error
+          )}
+        >
           <input
             type="text"
             name="form-date"
             id="booking-date"
             placeholder="Booking date"
           />
+          <span className={css.form__icon}>
+            <svg>
+              <use href={`${icons}#icon-date`}></use>
+            </svg>
+          </span>
         </label>
 
         <label className={css.form__label}>
           <textarea
-            name="form-email"
-            id=""
+            name="form-comment"
             placeholder="Comment"
             rows="4"
           ></textarea>

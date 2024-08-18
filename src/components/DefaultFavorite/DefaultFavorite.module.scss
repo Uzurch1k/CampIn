@@ -1,0 +1,22 @@
+.default {
+	width: 100%;
+	height: calc(100vh - 161px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&__title {
+		text-align: center;
+		font-size: 32px;
+		text-transform: uppercase;
+		letter-spacing: 8px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.default {
+		height: calc(100vh - 181px);
+		&__title {
+			font-size: 44px;
+		}
+	}
+}

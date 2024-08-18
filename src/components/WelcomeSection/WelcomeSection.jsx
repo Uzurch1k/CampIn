@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 
-import icons from '../../img/icons/icons.svg';
 import mp4Video from '../../img/media/mov-mp4.mp4';
 import webmVideo from '../../img/media/mov-webm.webm';
 
